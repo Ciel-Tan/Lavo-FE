@@ -36,7 +36,7 @@ function App() {
         <UnifiedLayout>
           <Router />
         </UnifiedLayout>
-        <Toaster />
+        <Toaster /> 
       </TooltipProvider>
     </QueryClientProvider>
   );
