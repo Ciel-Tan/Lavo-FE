@@ -125,60 +125,60 @@ export default function UnifiedLayout({ children }: UnifiedLayoutProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#121212] text-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Header */}
-      <header className="bg-[#1a1a1a] border-b border-[#39FF14]/20 sticky top-0 z-[60]">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-[60] shadow-sm">
         <div className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center space-x-4">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="lg:hidden text-white hover:bg-[#39FF14]/10"
+              className="lg:hidden text-gray-700 hover:bg-sky-50"
               data-testid="mobile-menu-toggle"
             >
               {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
             
             <Link href="/" className="flex items-center space-x-3">
-              <div className="bg-gradient-to-r from-[#39FF14] to-emerald-400 text-black px-4 py-2 rounded-lg font-bold text-xl shadow-lg">
+              <div className="gradient-ocean text-white px-4 py-2 rounded-lg font-bold text-xl shadow-lg ai-glow">
                 LAVO
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-white">Command Center</h1>
-                <p className="text-gray-400 text-sm">Trung tâm điều hành thông minh</p>
+                <h1 className="text-2xl font-bold text-gray-900">Command Center</h1>
+                <p className="text-gray-600 text-sm">Trung tâm điều hành thông minh</p>
               </div>
             </Link>
           </div>
 
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-[#39FF14] rounded-full animate-pulse"></div>
-              <span className="text-gray-300 text-sm">AI Online</span>
+            <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-sky-50 border border-sky-200">
+              <div className="w-2 h-2 bg-sky-500 rounded-full animate-pulse"></div>
+              <span className="text-sky-700 text-sm font-medium">AI Online</span>
             </div>
             
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="relative text-white hover:bg-[#39FF14]/10"
+            <Button
+              variant="ghost"
+              size="sm"
+              className="relative text-gray-700 hover:bg-sky-50"
               data-testid="notifications-button"
             >
               <Bell className="w-5 h-5" />
-              <Badge className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center p-0 border-0">
+              <Badge className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center p-0 border-0 shadow-lg">
                 3
               </Badge>
             </Button>
 
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="text-white hover:bg-[#39FF14]/10"
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-gray-700 hover:bg-sky-50"
               data-testid="settings-button"
             >
               <Settings className="w-5 h-5" />
             </Button>
 
-            <div className="text-sm text-gray-400">
+            <div className="text-sm text-gray-600">
               {new Date().toLocaleDateString('vi-VN')}
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function UnifiedLayout({ children }: UnifiedLayoutProps) {
         {/* Sidebar Navigation */}
         <aside className={`${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:translate-x-0 fixed lg:static z-40 w-72 h-screen bg-[#1a1a1a] border-r border-[#39FF14]/20 transition-transform duration-300 overflow-y-auto flex-shrink-0`}>
+        } lg:translate-x-0 fixed lg:static z-40 w-72 h-screen bg-white border-r border-gray-200 transition-transform duration-300 overflow-y-auto flex-shrink-0 shadow-lg`}>
           
           {/* Main Navigation */}
           {/* <div className="p-6">
@@ -236,9 +236,9 @@ export default function UnifiedLayout({ children }: UnifiedLayoutProps) {
           </div> */}
 
           {/* Modules Section */}
-          <div className="px-6 pb-6">
-            <div className="border-t border-[#39FF14]/20 pt-6">
-              <h3 className="text-sm font-semibold text-[#39FF14] mb-4 flex items-center">
+          <div className="px-6 pb-6 mt-6">
+            <div className="border-t border-gray-200 pt-6">
+              <h3 className="text-sm font-semibold ocean-text mb-4 flex items-center">
                 <Zap className="w-4 h-4 mr-2" />
                 MODULES
               </h3>
@@ -249,24 +249,24 @@ export default function UnifiedLayout({ children }: UnifiedLayoutProps) {
                   const colorClasses = getColorClasses(module.color);
                   
                   const iconColorMap = {
-                    emerald: 'text-emerald-400',
-                    blue: 'text-blue-400', 
-                    purple: 'text-purple-400',
-                    orange: 'text-orange-400'
+                    emerald: 'text-emerald-600',
+                    blue: 'text-sky-600',
+                    purple: 'text-violet-600',
+                    orange: 'text-orange-600'
                   };
                   
                   const badgeColorMap = {
-                    emerald: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-                    blue: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-                    purple: 'bg-purple-500/20 text-purple-400 border-purple-500/30', 
-                    orange: 'bg-orange-500/20 text-orange-400 border-orange-500/30'
+                    emerald: 'bg-emerald-100 text-emerald-700 border-emerald-300',
+                    blue: 'bg-sky-100 text-sky-700 border-sky-300',
+                    purple: 'bg-violet-100 text-violet-700 border-violet-300',
+                    orange: 'bg-orange-100 text-orange-700 border-orange-300'
                   };
                   
                   return (
                     <Link key={module.id} href={module.href}>
                       <div
                         onClick={() => setSidebarOpen(false)}
-                        className={`p-3 rounded-lg bg-[#262626] border border-transparent transition-all cursor-pointer ${colorClasses}`}
+                        className={`p-3 rounded-lg bg-white border border-gray-200 transition-all cursor-pointer hover:shadow-md hover:border-sky-300 ${colorClasses}`}
                         data-testid={`module-${module.id}`}
                       >
                         <div className="flex items-center justify-between mb-2">
@@ -275,8 +275,8 @@ export default function UnifiedLayout({ children }: UnifiedLayoutProps) {
                             {module.count}
                           </Badge>
                         </div>
-                        <h4 className="font-medium text-white text-sm">{module.name}</h4>
-                        <p className="text-gray-400 text-xs mt-1">{module.description}</p>
+                        <h4 className="font-medium text-gray-900 text-sm">{module.name}</h4>
+                        <p className="text-gray-600 text-xs mt-1">{module.description}</p>
                       </div>
                     </Link>
                   );
@@ -284,13 +284,13 @@ export default function UnifiedLayout({ children }: UnifiedLayoutProps) {
               </div>
 
               {/* System Status */}
-              <div className="border-t border-[#39FF14]/20 pt-4">
-                <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-600">
+              <div className="border-t border-gray-200 pt-4">
+                <div className="ocean-bg rounded-lg p-4 border border-sky-200">
                   <div className="flex items-center space-x-2 mb-2">
-                    <div className="w-2 h-2 bg-[#39FF14] rounded-full animate-pulse"></div>
-                    <span className="text-slate-300 text-sm font-medium">Hệ thống</span>
+                    <div className="w-2 h-2 bg-sky-500 rounded-full animate-pulse"></div>
+                    <span className="text-gray-900 text-sm font-medium">Hệ thống</span>
                   </div>
-                  <div className="text-slate-400 text-xs">
+                  <div className="text-gray-700 text-xs">
                     Hoạt động ổn định
                   </div>
                 </div>
@@ -308,8 +308,8 @@ export default function UnifiedLayout({ children }: UnifiedLayoutProps) {
         )}
 
         {/* Main Content */}
-        <main className="flex-1 min-h-screen bg-[#121212] lg:ml-0 ml-0">
-          <div className="min-h-screen bg-[#121212]">
+        <main className="flex-1 min-h-screen bg-gray-50 lg:ml-0 ml-0">
+          <div className="min-h-screen bg-gray-50">
             {children}
           </div>
         </main>
